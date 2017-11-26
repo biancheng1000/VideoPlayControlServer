@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="VideoPlayControlServer.Business.VideoList.VideoBrowserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:c="clr-namespace:CustomCode;assembly=CustomCodeResource"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+	<UserControl.Resources>
+		<ResourceDictionary Source="pack://application:,,,/CustomCodeResource;component/CustomSyles/CustomStyle.xaml"/>
+	</UserControl.Resources>
+    <Grid>
+		<GroupBox Header="视频文件">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="40"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="40"/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition Width="60"/>
+				</Grid.ColumnDefinitions>
+				<TextBox Text="{Binding SerchKey}" Tag="输入需要搜素的视频名称" Style="{StaticResource  WarkTextBoxStyle}"/>
+				<Button Content="搜索" Grid.Column="1"/>
+				<ListBox ItemsSource="{Binding VideoSource}" Grid.Row="1" Grid.ColumnSpan="2"/>
+				<Button Content="删除选中的文件" Command="{Binding DeleteFile}" Grid.Row="2" HorizontalAlignment="Left"/>
+			</Grid>
+		</GroupBox>
+    </Grid>
+</UserControl>
