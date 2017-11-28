@@ -14,12 +14,17 @@ namespace VideoPlayControlServer.Business.VideoList
 	public class VideoBrowserViewModel
 	{
 
-		#region Commands
+        public VideoBrowserViewModel()
+        {
+                 
+        }
 
-		/// <summary>
-		/// 删除选中的视频文件
-		/// </summary>
-		public ICommand DeleteSelectFile
+        #region Commands
+
+        /// <summary>
+        /// 删除选中的视频文件
+        /// </summary>
+        public ICommand DeleteSelectFile
 		{
 			get
 			{
